@@ -9,7 +9,6 @@ alkometriServer.get("/", (request, response) => {
     response.status(200).json({result: "Alkometri Server responding"})
 })
 
-
 alkometriServer.listen(port,() =>{
     console.log(`Server running at port: ${port}`)
 })

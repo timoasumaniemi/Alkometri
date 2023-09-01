@@ -4,11 +4,19 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Content-container {
+  padding: 5px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: lightgray;
 }

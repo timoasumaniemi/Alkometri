@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Header from '../App';
 import Content from '../App';
-
+import axios from 'axios'
 
 it('Header should display Hello Alkometri', () => {
   render(<Header />)
@@ -17,3 +17,40 @@ it('Content should have "Bottles:" label', () => {
   render(<Content />)
   expect(screen.getByLabelText('Bottles:')).toBeInTheDocument()
 })
+
+it('Content should have "Time:" label', () => {
+  render(<Content />)
+  expect(screen.getByLabelText('Time:')).toBeInTheDocument()
+})
+
+it('Content should have "Gender: " text', () => {
+  render(<Content />)
+  expect(screen.getByText('Gender:')).toBeInTheDocument()
+})
+
+it('Bottles input should have number type', () => {
+  render(<Content />)
+  const bottlesInput = screen.getByLabelText('Bottles:')
+  expect(bottlesInput.getAttribute("type")).toBe("number")
+})
+
+it('Time input should have number type', () => {
+  render(<Content />)
+  const timeInput = screen.getByLabelText('Time:')
+  expect(timeInput.getAttribute("type")).toBe("number") 
+})
+
+ it('Gender selectors should have male and female ids', () => {
+  render(<Content />)
+  const maleSelector = screen.getByLabelText('Male')
+  const femaleSelector = screen.getByLabelText('Female')
+  expect(maleSelector).toBeInTheDocument()
+  expect(femaleSelector).toBeInTheDocument()
+ })
+
+ it('Gender selectors should be radio type', () => {
+  render(<Content />)
+  const maleSelector = screen.getByLabelText('Male')
+  const femaleSelector = screen.getByLabelText('Female')
+  expect(maleSelector.getAttribute("type")).toBe("radio")
+ })

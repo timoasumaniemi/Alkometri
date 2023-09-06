@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  border-style: solid;
+  border-color: gray;
 }
 
 .App-header {
@@ -11,6 +13,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  border-style: solid;
+  border-color: gray;
 }
 
 .Content-container {
@@ -19,4 +23,20 @@
   display: flex;
   justify-content: center;
   background-color: lightgray;
+  border-style: solid;
+  border-color: gray;
+  margin:3px;
+}
+/*
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+*/
+.Small-input::-webkit-inner-spin-button, 
+.Small-input::-webkit-outer-spin-button{
+  opacity: 1;
+  border-style: solid;
+  border-color: gray;
 }

@@ -1,11 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import Header from '../App';
 import Content from '../App';
-import axios from 'axios'
 
 it('Header should display Hello Alkometri', () => {
   render(<Header />)
-  expect(screen.getByText('Hello Alkometri')).toBeInTheDocument()
+  expect(screen.getByText('Alkometri 1.0')).toBeInTheDocument()
 })
 
 it('Content should have "Weight:" label', () => {
@@ -37,20 +36,21 @@ it('Bottles input should have number type', () => {
 it('Time input should have number type', () => {
   render(<Content />)
   const timeInput = screen.getByLabelText('Time:')
-  expect(timeInput.getAttribute("type")).toBe("number") 
+  expect(timeInput.getAttribute("type")).toBe("number")
 })
 
- it('Gender selectors should have male and female ids', () => {
+it('Gender selectors should have male and female ids', () => {
   render(<Content />)
   const maleSelector = screen.getByLabelText('Male')
   const femaleSelector = screen.getByLabelText('Female')
   expect(maleSelector).toBeInTheDocument()
   expect(femaleSelector).toBeInTheDocument()
- })
+})
 
- it('Gender selectors should be radio type', () => {
+it('Gender selectors should be radio type', () => {
   render(<Content />)
   const maleSelector = screen.getByLabelText('Male')
   const femaleSelector = screen.getByLabelText('Female')
   expect(maleSelector.getAttribute("type")).toBe("radio")
- })
+  expect(femaleSelector.getAttribute("type")).toBe("radio")
+})

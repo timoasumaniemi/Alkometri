@@ -2,6 +2,7 @@
   text-align: center;
   border-style: solid;
   border-color: gray;
+  border-width: 1px;
 }
 
 .App-header {
@@ -14,6 +15,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
   border-style: solid;
+
+  border-width: 1px;
   border-color: gray;
 }
 
@@ -25,6 +28,10 @@
   background-color: lightgray;
   border-style: solid;
   border-color: gray;
+
+  border-width: 2px;
+  border-radius: 5px;
+  width: 300px;
   margin: 3px;
 }
 
@@ -37,6 +44,7 @@
 
 input {
   margin: 5px;
+  width: 90px;
 }
 
 #submit-button {

@@ -1,4 +1,4 @@
-function calculateAlcohol(data){
+function calculateAlcohol(data) {
     var alcoholLevel = 0
     const litres = data.bottles * 0.33
     const grams = litres * 8 * 4.5

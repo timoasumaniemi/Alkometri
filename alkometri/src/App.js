@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Header header="Hello Alkometri" />
+      <Header header="Alkometri 1.0" />
       <Content />
     </>
   )
@@ -107,7 +107,9 @@ function Content() {
             defaultValue={data.weight}
             id="weight-input"
             min="0"
-            onChange={(e) => { setWeight(e.target.value) }} />
+            onChange={(e) => { setWeight(e.target.value) }}>
+          </input>
+          <p>1 = 1kg</p>
         </div>
         <div className="Content-container">
           <label htmlFor="bottles-input">Bottles:</label>
@@ -117,7 +119,9 @@ function Content() {
             defaultValue={data.bottles}
             id="bottles-input"
             min="0"
-            onChange={(e) => { setBottles(e.target.value) }}></input>
+            onChange={(e) => { setBottles(e.target.value) }}>
+          </input>
+          <p>1 bottle = 0.33l</p>
         </div>
         <div className="Content-container">
           <label htmlFor="time-input">Time:</label>
@@ -127,7 +131,9 @@ function Content() {
             defaultValue={data.time}
             id="time-input"
             min="0"
-            onChange={(e) => { setTime(e.target.value) }} ></input>
+            onChange={(e) => { setTime(e.target.value) }} >
+          </input>
+          <p>1 = 1h</p>
         </div>
 
         <div className="Content-container">

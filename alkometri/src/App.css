@@ -20,23 +20,33 @@
 .Content-container {
   padding: 5px;
   align-items: center;
-  display: flex;
+  display: block;
   justify-content: center;
   background-color: lightgray;
   border-style: solid;
   border-color: gray;
-  margin:3px;
+  margin: 3px;
 }
-/*
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {
-  opacity: 1;
-}
-*/
-.Small-input::-webkit-inner-spin-button, 
-.Small-input::-webkit-outer-spin-button{
+.Small-input::-webkit-inner-spin-button,
+.Small-input::-webkit-outer-spin-button {
   opacity: 1;
   border-style: solid;
   border-color: gray;
+}
+
+input {
+  margin: 5px;
+}
+
+#submit-button {
+  border-style: solid;
+  border-color: gray;
+  border-radius: 10px;
+  font-size: 16pt;
+}
+
+#result {
+  margin-left: 20px;
+  font-size: 18pt;
 }

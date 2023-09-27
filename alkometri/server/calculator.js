@@ -8,8 +8,11 @@ function calculateAlcohol(data) {
     if (data.gender == "male") {
         alcoholLevel = gramsLeft / (data.weight * 0.7)
     }
-    if (data.gender == "female") {
+    else if (data.gender == "female") {
         alcoholLevel = gramsLeft / (data.weight * 0.6)
+    }
+    if(alcoholLevel < 0) {
+        alcoholLevel = 0
     }
 
     return parseFloat(alcoholLevel.toFixed(2));

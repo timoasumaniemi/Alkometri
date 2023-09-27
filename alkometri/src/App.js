@@ -22,7 +22,7 @@ function Header(props) {
 }
 
 function Content() {
-  const [gender, setGender] = useState("")
+  const [gender, setGender] = useState("male")
   const [bottles, setBottles] = useState(0)
   const [time, setTime] = useState(0)
   const [weight, setWeight] = useState(0)
@@ -48,8 +48,11 @@ function Content() {
     if (data.gender === "male") {
       alcoholLevel = gramsLeft / (data.weight * 0.7)
     }
-    if (data.gender === "female") {
+    else if (data.gender === "female") {
       alcoholLevel = gramsLeft / (data.weight * 0.6)
+    }
+    if (alcoholLevel < 0) {
+      alcoholLevel = 0
     }
 
     setResult(alcoholLevel)
@@ -140,21 +143,20 @@ function Content() {
           <p>Gender:</p>
           <input
             type="radio"
-            id="male-selector"
             name="genderSelector"
+            value="male"
             onChange={(e) => (
               setGenderValue("male")
-            )}>
-          </input>
-          <label htmlFor="male-selector">Male</label><br />
+            )} />
+          <label>Male</label><br />
           <input
             type="radio"
-            id="female-selector"
             name="genderSelector"
+            value="female"
             onChange={(e) => (
-              setGenderValue("female"))}>
-          </input>
-          <label htmlFor="female-selector">Female</label><br />
+              setGenderValue("female")
+            )} />
+          <label>Female</label><br />
 
           <input disabled={submitDisabled} id="submit-button" type="submit"></input>
           <br></br>

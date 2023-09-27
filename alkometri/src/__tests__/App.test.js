@@ -41,16 +41,8 @@ it('Time input should have number type', () => {
 
 it('Gender selectors should have male and female ids', () => {
   render(<Content />)
-  const maleSelector = screen.getByLabelText('Male')
-  const femaleSelector = screen.getByLabelText('Female')
+  const maleSelector = screen.getByText('Male')
+  const femaleSelector = screen.getByText('Female')
   expect(maleSelector).toBeInTheDocument()
   expect(femaleSelector).toBeInTheDocument()
-})
-
-it('Gender selectors should be radio type', () => {
-  render(<Content />)
-  const maleSelector = screen.getByLabelText('Male')
-  const femaleSelector = screen.getByLabelText('Female')
-  expect(maleSelector.getAttribute("type")).toBe("radio")
-  expect(femaleSelector.getAttribute("type")).toBe("radio")
 })

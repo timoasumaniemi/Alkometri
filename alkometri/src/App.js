@@ -28,14 +28,12 @@ function Content() {
   const [weight, setWeight] = useState(0)
   const [result, setResult] = useState(0)
   const [progress, setProgress] = useState("")
-  const [submitDisabled, setSubmitDisabled] = useState(true)
   const [data, setData] = useState({
     bottles: 0, time: 0, weight: 0, gender: "male"
   })
 
   const setGenderValue = (props) => {
     setGender(props)
-    setSubmitDisabled(false)
   }
 
   const calculateLocally = () => {
@@ -80,8 +78,6 @@ function Content() {
       return
     }
 
-    setSubmitDisabled(true)
-
     axios.post(
       "http://localhost:3001/api",
       data,
@@ -89,12 +85,10 @@ function Content() {
       .then((response) => {
         setResult(response.data.result)
         setProgress("")
-        setSubmitDisabled(false)
       })
       .catch((err) => {
         calculateLocally()
         setProgress("")
-        setSubmitDisabled(false)
       })
   }
 
@@ -145,6 +139,7 @@ function Content() {
             type="radio"
             name="genderSelector"
             value="male"
+            defaultChecked
             onChange={(e) => (
               setGenderValue("male")
             )} />
@@ -158,7 +153,7 @@ function Content() {
             )} />
           <label>Female</label><br />
 
-          <input disabled={submitDisabled} id="submit-button" type="submit"></input>
+          <input id="submit-button" type="submit"></input>
           <br></br>
           <output id="result">{result.toFixed(2)}</output>
           <br></br>
